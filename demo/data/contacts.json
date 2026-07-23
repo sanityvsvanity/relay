@@ -1,0 +1,8 @@
+[
+  {"phone": "+61400000001", "first_name": "Priya", "attributes": {"suburb": "Richmond"}},
+  {"phone": "+61400000002", "first_name": "Tom", "attributes": {"suburb": "Brunswick"}},
+  {"phone": "+61400000003", "first_name": "Mei", "attributes": {"suburb": "Footscray"}},
+  {"phone": "+61400000004", "first_name": "Jack", "attributes": {"suburb": "Preston"}},
+  {"phone": "+61400000005", "first_name": "Sofia", "attributes": {"suburb": "Coburg"}},
+  {"phone": "+61400000006", "first_name": "Liam", "attributes": {"suburb": "Thornbury"}}
+]
