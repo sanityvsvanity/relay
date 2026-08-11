@@ -22,7 +22,7 @@ def test_opt_out_keywords():
 def test_opt_out_requires_exact_keyword():
     # A sentence containing the word is a conversation, not an opt-out
     assert not is_opt_out("please don't stop sending these")
-    assert not is_opt_out("what time do inspections stop?")
+    assert not is_opt_out("what time do deliveries stop?")
 
 
 def test_opt_in_and_help():

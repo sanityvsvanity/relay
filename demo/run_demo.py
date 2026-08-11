@@ -22,8 +22,8 @@ DATA_DIR = Path(__file__).parent / "data"
 WIDTH = 60
 
 TEMPLATE = (
-    "Hi {first_name}, new townhouses just released in your area from $520k. "
-    "Want the floor plans? Reply YES for details or STOP to opt out."
+    "Hi {first_name}, our new season range is out now, starting at $520. "
+    "Want the details? Reply YES for the catalogue or STOP to opt out."
 )
 
 
@@ -56,7 +56,7 @@ async def run_demo(reset: bool = False):
     contacts = json.loads((DATA_DIR / "contacts.json").read_text())
 
     step(1, 5, "Queue a campaign to six contacts")
-    campaign_id = await create_campaign("Townhouse release", TEMPLATE)
+    campaign_id = await create_campaign("New season release", TEMPLATE)
     for entry in contacts:
         contact = await upsert_contact(entry["phone"], entry["first_name"], entry["attributes"])
         body = TEMPLATE.format(first_name=contact["first_name"])
@@ -68,7 +68,7 @@ async def run_demo(reset: bool = False):
     print(f"  {counts}")
 
     step(3, 5, "Replies come in: interested, question, opt out")
-    r1 = await handle_inbound("+61400000001", "Yes keen, how much are the 3 bedroom ones?")
+    r1 = await handle_inbound("+61400000001", "Yes keen, how much are the larger sizes?")
     print(f"  Priya: {r1['action']} (intent: {r1.get('intent')})")
     r2 = await handle_inbound("+61400000002", "Who is this? How did you get my number?")
     print(f"  Tom: {r2['action']} (intent: {r2.get('intent')})")
