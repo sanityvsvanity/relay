@@ -29,7 +29,7 @@ The carrier is mocked in demo mode and replies are template-based. Set Twilio cr
 
 **Compliance is not a feature, it is the floor.** STOP, UNSUBSCRIBE, CANCEL and friends are matched as exact keywords before anything else touches the message. Opt-out is enforced at send time, not just at queue time, so a message queued before the opt-out still gets suppressed. The one legally required confirmation sends directly, bypassing its own suppression rule. HELP is answered even for opted-out contacts. START opts back in.
 
-**Every send goes through one queue.** Campaign blasts and conversational replies use the same outbox, so there is exactly one place where opt-out, quiet hours and rate limiting are enforced. A token bucket keeps a 50,000 message campaign from bursting past carrier limits.
+**Every send goes through one queue.** Campaign blasts and conversational replies use the same outbox, so there is exactly one place where opt-out, quiet hours and rate limiting are enforced. A token bucket keeps a large campaign from bursting past carrier limits.
 
 **Quiet hours defer, replies do not.** Campaign messages queued at 11pm wait for 9am. A person who texts you at 11pm gets their answer at 11pm, because that is how conversations work.
 
