@@ -2,7 +2,7 @@
 
 A conversational SMS engine for outbound marketing at scale. Campaigns go out through a rate-limited queue, replies come back into a conversation loop that classifies intent and answers in seconds, hot leads get routed to a human with full context, and every message lands in Postgres.
 
-I built the production version of this pattern for a client whose stack now makes around 400,000 outbound marketing SMS a month conversational. That system is theirs. This repo is a clean-room reference implementation of the architecture: none of the production code, all of the load-bearing decisions.
+I built the production version of this pattern for a client. That system is theirs. This repo is a clean-room reference implementation of the architecture: none of the production code, all of the load-bearing decisions.
 
 ## Quickstart
 
